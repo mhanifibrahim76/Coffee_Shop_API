@@ -19,6 +19,9 @@ app.use(express.urlencoded({ extended: true }));
 const productRoutes = require('./routes/product');
 app.use('/api/products', productRoutes);
 
+// Routes Transaction
+const transactionRoutes = require('./routes/transactionRoutes');
+app.use('/api/transactions', transactionRoutes);
 
 // Routes users
 const authRoutes = require('./routes/auth');
