@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const productController = require('../controller/addProductController');
-const updateProductController = require('../controller/updateProductController');
-const delProductController = require('../controller/delProductController');
+const productController = require('../controller/productController');
+const updateProductController = require('../controller/productController');
+const delProductController = require('../controller/productController');
 const getAllProducts = require('../controller/productController');
 const authMiddleware = require('../middleware/auth');
 

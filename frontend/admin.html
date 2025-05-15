@@ -1,27 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
 </head>
+
 <body>
     <div style="display: flex; justify-content: space-between; align-items: center;">
-    <h1>Add User</h1>
+        <h1>Admin Dashboard</h1>
         <button onclick="logout()">Logout</button>
     </div>
-    <form id="userForm">
-        <input id="username" type="text" placeholder="Username" required>
-        <input id="password" type="password" placeholder="Password" required>
-        <select name="" id="role">  
-            <option value="">-- Select Role --</option>
-            <option value="admin">Admin</option>
-            <option value="kasir">Kasir</option>
-        </select>
-        <button type="submit">Add User</button>
-    </form>
+
+    <!-- User Management Section -->
+    <div id="userManagement">
+        <h2>User Management</h2>
+        <table id="usersTable" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <button onclick="showAddUserForm()">Add User</button>
+
+        <!-- User Form -->
+        <div id="userFormContainer" style="display:none;">
+            <h3 id="userFormTitle">Add User</h3>
+            <form id="userForm">
+                <input type="hidden" id="userId">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password">
+                <select id="role" required>
+                    <option value="">-- Select Role --</option>
+                    <option value="admin">Admin</option>
+                    <option value="kasir">Kasir</option>
+                </select>
+                <button type="submit">Submit</button>
+                <button type="button" onclick="cancelUserForm()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Product Management Section -->
+    <div id="productManagement">
+        <h2>Product Management</h2>
+        <table id="productsTable" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <button onclick="showAddForm()">Add Product</button>
+
+        <!-- Product Form -->
+        <div id="productForm" style="display:none;">
+            <h3 id="formTitle">Add Product</h3>
+            <input type="hidden" id="productId" />
+            <input type="text" id="productName" placeholder="Product Name" />
+            <input type="text" id="productCategory" placeholder="Category" />
+            <input type="number" id="productPrice" placeholder="Price" />
+            <input type="number" id="productStock" placeholder="Stock" />
+            <button onclick="submitProduct()">Submit</button>
+            <button onclick="cancelForm()">Cancel</button>
+        </div>
+    </div>
 
     <script src="./js/auth.js"></script>
     <script src="./js/admin.js"></script>
 </body>
+
 </html>

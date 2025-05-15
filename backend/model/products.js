@@ -1,33 +1,41 @@
-const db = require(`../config/db`)
+const db = require('../config/db');
 
-// Get All Products
-const getAll = (callback) => {
-    db.query('SELECT * FROM products', callback)
-}
-
-// Update Product
-const updateProduct = (id, name, category, price, stock, callback) => {
-    const query = 'UPDATE products SET name = ?, category = ?, price = ?, stock = ? WHERE id = ?';
-    db.query(query, [name, category, price, stock, id], callback);
-};
-  
-// Delete Product
-const deleteProduct = (id, callback) => {
-    const query = 'DELETE FROM products WHERE id = ?';
-    db.query(query, [id], callback);
+// Get all products
+const getAll = async () => {
+  const [rows] = await db.query('SELECT * FROM products');
+  return rows;
 };
 
 // Add Product
-const addProduct = (name, category, price, stock, callback) => {
-    const query = 'INSERT INTO products (name, category, price, stock) VALUES (?, ?, ?, ?)';
-    db.query(query, [name, category, price, stock], callback);
-  };
+const addProduct = async (name, category, price, stock) => {
+  const [result] = await db.query(
+    'INSERT INTO products (name, category, price, stock) VALUES (?, ?, ?, ?)',
+    [name, category, price, stock]
+  );
+  return result;
+};
 
-  module.exports = {
-    getAll,
-    addProduct,
-    updateProduct,
-    deleteProduct
-  };
+// Update Product
+const updateProduct = async (id, name, category, price, stock) => {
+  const [result] = await db.query(
+    'UPDATE products SET name = ?, category = ?, price = ?, stock = ? WHERE id = ?',
+    [name, category, price, stock, id]
+  );
+  return result;
+};
 
+// Delete Product
+const deleteProduct = async (id) => {
+  const [result] = await db.query(
+    'DELETE FROM products WHERE id = ?',
+    [id]
+  );
+  return result;
+};
 
+module.exports = {
+  getAll,
+  addProduct,
+  updateProduct,
+  deleteProduct
+};

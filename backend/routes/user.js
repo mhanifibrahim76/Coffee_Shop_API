@@ -3,7 +3,11 @@ const router = express.Router();
 const userController = require('../controller/userController');
 const authMiddleware = require('../middleware/auth');
 
-// Protect the route with authentication middleware
+
 router.post('/', authMiddleware, userController.addUsers);
+router.get('/', authMiddleware, userController.getUsers);
+router.get('/:id', authMiddleware, userController.getUserById);
+router.put('/:id', authMiddleware, userController.updateUser);
+router.delete('/:id', authMiddleware, userController.deleteUser);
 
 module.exports = router;

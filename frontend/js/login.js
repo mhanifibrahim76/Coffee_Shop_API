@@ -22,7 +22,7 @@ form.addEventListener("submit", async (e) => {
         window.location.href = 'admin.html'
     }
     else{
-        window.location.href = 'kasir.html'
+        window.location.href = 'index.html'
     }
   }
   else {
