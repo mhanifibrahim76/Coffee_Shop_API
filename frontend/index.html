@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasir Dashboard</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h1>Kasir Dashboard</h1>
-        <button onclick="logout()">Logout</button>
+  <header class="header-bar">
+    <div class="header-container">
+      <h1>Kasir Dashboard</h1>
+      <button onclick="logout()" class="logout-btn">Logout</button>
     </div>
-    <h1>Product List</h1>
-    <ul id="product-list"></ul>
+  </header>
 
-    <script src="./js/script.js"></script>
-    <script src="./js/auth.js"></script>
+  <main class="main-content">
+    <section class="menu-section">
+      <h2 class="section-title">Coffees</h2>
+      <div class="product-grid" id="coffee-list">
+        <!-- Coffee items will be added dynamically here -->
+      </div>
+
+      <h2 class="section-title">Snacks</h2>
+      <div class="product-grid" id="snack-list">
+        <!-- Snack items will be added dynamically here -->
+      </div>
+    </section>
+
+    <aside class="receipt-section">
+      <h2>Total</h2>
+      <div id="receipt-items">THE RECEIPT</div>
+      <button class="pay-btn" onclick="handlePay()">Pay</button>
+    </aside>
+  </main>
+
+  <footer>
+    <p>coffeeShop©</p>
+  </footer>
+
+  <script src="./js/script.js"></script>
+  <script src="./js/auth.js"></script>
 </body>
 </html>
