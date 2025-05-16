@@ -1,39 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kasir Dashboard</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf0d3;
+        }
+
+        .banner{
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+        }
+        
+       /* Logout button style */
+.banner button {
+  background-color: #c4a7a7;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.banner button:hover {
+  background-color: #a68888;
+}
+        
         .transaction-form {
-            max-width: 800px;
+            background-color: #5f3939;
+            max-width: 600px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 30px;
             border: 1px solid #ccc;
             border-radius: 8px;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
         }
+
+        .transaction-form h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
         .item-list {
             margin: 20px 0;
         }
+
         .item-entry {
             display: flex;
             gap: 10px;
             margin-bottom: 10px;
         }
+
+        .transaction-form form>div {
+            background-color: #754c4c;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .transaction-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
         .btn {
             padding: 8px 16px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
+
         .btn-primary {
-            background-color: #007bff;
+            background-color: #c4a7a7;            
             color: white;
         }
+
         .btn-danger {
-            background-color: #dc3545;
+            background-color: #3a2222;
             color: white;
         }
+
         /* Modal styles */
         .modal {
             display: none;
@@ -42,8 +98,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0, 0, 0, 0.5);
         }
+
         .modal-content {
             background-color: white;
             margin: 15% auto;
@@ -52,6 +109,7 @@
             max-width: 500px;
             border-radius: 8px;
         }
+
         .receipt {
             font-family: monospace;
             white-space: pre-line;
@@ -59,20 +117,36 @@
             background-color: #f8f9fa;
             border-radius: 4px;
         }
+
         .close {
             float: right;
             cursor: pointer;
             font-size: 24px;
         }
+
         .print-btn {
             background-color: #28a745;
             color: white;
             margin-top: 10px;
         }
+
+        /* Footer */
+footer {
+  background-color: #6b4545;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 14px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
     </style>
 </head>
+
 <body>
-    <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div class="banner">
         <h1>Kasir Dashboard</h1>
         <button onclick="logout()">Logout</button>
     </div>
@@ -111,7 +185,10 @@
         </div>
     </div>
 
+    <footer>coffieShop©</footer>
+
     <script src="./js/script.js"></script>
     <script src="./js/auth.js"></script>
 </body>
+
 </html>

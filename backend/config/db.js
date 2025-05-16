@@ -1,4 +1,12 @@
 require('dotenv').config();
+
+console.log('ENV values:', {
+  DB_HOST: process.env.DB_HOST,
+  DB_USER: process.env.DB_USER,
+  DB_PASSWORD: process.env.DB_PASSWORD === '' ? '(empty)' : process.env.DB_PASSWORD,
+  DB_NAME: process.env.DB_NAME
+});
+
 const mysql = require('mysql2/promise');
 
 const db = mysql.createPool({

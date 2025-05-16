@@ -5,8 +5,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
-</head>
+    <style>
+        /* Reset and base layout */45
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f2ed;
+  color: #333;
+  padding: 20px;
+}
 
+h1, h2, h3 {
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+/* Header */
+body > div:first-child {
+  background-color: #6b4545;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+body > div:first-child h1 {
+  margin: 0;
+}
+
+body > div:first-child button {
+  background-color: #c4a7a7;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+body > div:first-child button:hover {
+  background-color: #a68888;
+}
+
+/* Section containers */
+#userManagement,
+#productManagement {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #eee;
+}
+
+/* Buttons */
+button {
+  background-color: #6b4545;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 5px 3px 0 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #5f3939;
+}
+
+/* Form Containers */
+#userFormContainer,
+#productForm {
+  background-color: #f9f6f2;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Form Titles */
+#userFormTitle,
+#formTitle {
+  margin-bottom: 10px;
+  color: #6b4545;
+}
+
+    </style>
+</head>
 <body>
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <h1>Admin Dashboard</h1>
